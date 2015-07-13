@@ -1,0 +1,11 @@
+<div class="container">
+  <% @posts.order('created_at DESC').each do |post| %>
+    <div class="post">
+      <h1><%= post.title %> </h1>
+      <p><%= post.body %> </p>
+      <p>Erstellt von <%= link_to post.user.name, user_path(post.user) %> vor <%= time_ago_in_words(post.created_at) %> </p>
+    </div>
+  <% end %>
+</div>
+
+

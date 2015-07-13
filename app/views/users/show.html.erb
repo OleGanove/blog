@@ -1,0 +1,11 @@
+<div class="container">
+  <h1> Das ist die Seite von <%= @user.name %> </h1>  
+
+  <p><%= @user.name %> | <%= @user.email %></p>
+  <h2> Das sind all seine Posts </h2>
+  <ul>
+    <% @posts.each do |post| %>
+      <li> <%= link_to post.title, user_posts_path(post.user) %></li>
+    <% end %>
+  </ul>
+</div>
